@@ -221,35 +221,105 @@
     </div>
     <div class="mis-15">Mis XV Años</div>
     <h2 class="magic" style="margin-top:15px;">Valentina</h2>
+
     <div class="message">
-      <p>Hoy, mi corazón late con emoción. Quince años de vida, de sueños, de risas y de amor. Y todo eso ha sido aún
-        más especial porque te he tenido a mi lado en cada paso de este camino.</p>
+      <p>Hoy, mi corazón late con emoción. Quince años de vida, de sueños, de risas y de amor.
+        Y todo eso ha sido aún más especial porque te he tenido a mi lado en cada paso de este camino.</p>
+
       <p><em>Reserva esta fecha tan especial…</em></p>
+
       <p><strong>Viernes, 12 de Diciembre de 2025 — 22:00 hs</strong></p>
+
       <p>Con amor y gratitud:<br><strong>Valentina</strong></p>
+
       <h3>Faltan</h3>
       <div id="countdown">Cargando...</div>
     </div>
-  </div> <!-- Sección de ubicación -->
+  </div>
+
+  <!-- Sección de ubicación -->
   <div class="section">
     <h2>Ubicación</h2>
-    <p>C. Bellavista 243, Y4609 San Salvador de Jujuy, Jujuy</p> <a class="btn"
-      href="https://www.google.com/maps/search/?api=1&query=C.+Bellavista+243,+San+Salvador+de+Jujuy"
+    <p>C. Bellavista 243, Y4609 San Salvador de Jujuy, Jujuy</p>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=C.+Bellavista+243,+San+Salvador+de+Jujuy"
       target="_blank">Ver en Google Maps</a>
-  </div> <!-- Sección de vestimenta -->
+  </div>
+
+  <!-- Sección de vestimenta -->
   <div class="section">
-    <h2>Código de vestimenta</h2> <img src="./resources/vestimenta.png" alt="Código de vestimenta"
+    <h2>Código de vestimenta</h2>
+    <img src="./resources/vestimenta.png" alt="Código de vestimenta"
       style="width:50%; border-radius:10px; margin:15px 0;" />
-    <p><strong>Media Gala</strong><br> Por favor, tratar de evitar vestidos muy largos, y cualquier tipo de colores con
-      tonos celestes/azules,<br> ya que es el color optado por la quinceañera.<br> Muchas gracias. </p>
-  </div> <!-- Confirmar asistencia -->
-  <div class="section"> <a class="btn"
-      href="https://docs.google.com/forms/d/e/1FAIpQLSf_Yq678akE_fDUHotKK4pCZAStuLjB0XUMKZoSbESw8V8XHA/viewform?usp=sharing&ouid=107063185675804267938"
-      target="_blank">Confirmar asistencia</a> </div>
+    <p><strong>Media Gala</strong><br>
+      Por favor, tratar de evitar vestidos muy largos, y cualquier tipo de colores con tonos celestes/azules,<br>
+      ya que es el color optado por la quinceañera.<br>
+      Muchas gracias.
+    </p>
+  </div>
+
+  <!-- Confirmar asistencia -->
+  <div class="section">
+    <a class="btn" href="TU_LINK_DE_GOOGLE_FORMS" target="_blank">Confirmar asistencia</a>
+  </div>
+
   <audio id="bg-music" loop>
     <source src="./resources/musica.mp3" type="audio/mpeg" />
-  </audio> <button id="music-btn">🎵</button>
-  <script> // Contador const eventDate = new Date('December 12, 2025 22:00:00').getTime(); setInterval(() => { const now = Date.now(); const diff = eventDate - now; if (diff <= 0) { document.getElementById('countdown').innerText = '¡Es hoy!'; return; } const days = Math.floor(diff / (1000 * 60 * 60 * 24)); const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)); const secs = Math.floor((diff % (1000 * 60)) / 1000); document.getElementById('countdown').innerText = ${days} días, ${hours} hs, ${mins} min, ${secs} seg; }, 1000); // Música const music = document.getElementById('bg-music'); const btn = document.getElementById('music-btn'); let musicStarted = false; function updateMusicIcon() { btn.textContent = music.paused ? '🎵' : '⏸️'; } document.addEventListener('click', function startMusicOnce() { if (!musicStarted) { music.play().catch(() => { }); musicStarted = true; updateMusicIcon(); document.removeEventListener('click', startMusicOnce); } }); btn.onclick = () => { if (music.paused) { music.play().catch(() => { }); } else { music.pause(); } updateMusicIcon(); }; // Carrusel crossfade const images = ['./resources/valentina1.jpg', './resources/valentina2.jpg', './resources/valentina3.jpg']; let currentIndex = 0; const img1 = document.getElementById('img1'); const img2 = document.getElementById('img2'); let showingImg1 = true; setInterval(() => { currentIndex = (currentIndex + 1) % images.length; if (showingImg1) { img2.src = images[currentIndex]; img2.style.opacity = 1; img1.style.opacity = 0; } else { img1.src = images[currentIndex]; img1.style.opacity = 1; img2.style.opacity = 0; } showingImg1 = !showingImg1; }, 4000); // Partículas mágicas const particlesContainer = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const p = document.createElement('div'); p.className = 'particle'; p.style.left = Math.random() * 100 + '%'; p.style.top = Math.random() * 100 + '%'; p.style.width = (Math.random() * 8 + 4) + 'px'; p.style.height = p.style.width; p.style.animationDuration = (Math.random() * 3 + 4) + 's'; particlesContainer.appendChild(p); } </script>
+  </audio>
+  <button id="music-btn">🎵</button>
+
+  <script>
+    // Contador
+    const eventDate = new Date('December 12, 2025 22:00:00').getTime();
+    setInterval(() => {
+      const now = Date.now();
+      const diff = eventDate - now;
+      if (diff <= 0) { document.getElementById('countdown').innerText = '¡Es hoy!'; return; }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('countdown').innerText = `${days} días, ${hours} hs, ${mins} min, ${secs} seg`;
+    }, 1000);
+
+    // Música
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    let musicStarted = false;
+
+    function updateMusicIcon() { btn.textContent = music.paused ? '🎵' : '⏸️'; }
+
+    document.addEventListener('click', function startMusicOnce() {
+      if (!musicStarted) { music.play().catch(() => { }); musicStarted = true; updateMusicIcon(); document.removeEventListener('click', startMusicOnce); }
+    });
+
+    btn.onclick = () => { if (music.paused) { music.play().catch(() => { }); } else { music.pause(); } updateMusicIcon(); };
+
+    // Carrusel crossfade
+    const images = ['./resources/valentina1.jpg', './resources/valentina2.jpg', './resources/valentina3.jpg'];
+    let currentIndex = 0;
+    const img1 = document.getElementById('img1');
+    const img2 = document.getElementById('img2');
+    let showingImg1 = true;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      if (showingImg1) { img2.src = images[currentIndex]; img2.style.opacity = 1; img1.style.opacity = 0; }
+      else { img1.src = images[currentIndex]; img1.style.opacity = 1; img2.style.opacity = 0; }
+      showingImg1 = !showingImg1;
+    }, 4000);
+
+    // Partículas mágicas
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement('div'); p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.width = (Math.random() * 8 + 4) + 'px';
+      p.style.height = p.style.width;
+      p.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      particlesContainer.appendChild(p);
+    }
+  </script>
 </body>
 
 </html>
